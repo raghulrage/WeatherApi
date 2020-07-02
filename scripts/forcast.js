@@ -5,7 +5,7 @@ const getWeather = async (id) => {
     const base = 'https://dataservice.accuweather.com/currentconditions/v1/';
     const qurey = `${id}?apikey=${key}`;
 
-    const response = await fetch(base + qurey, { mode: 'no-cors'});
+    const response = await fetch(base + qurey);
     const data = await response.json();
     
     return data[0];
@@ -16,7 +16,7 @@ const getCity = async (city) => {
     const base = 'https://dataservice.accuweather.com/locations/v1/cities/search';
     const qurey = `?apikey=${key}&q=${city}`;
 
-    const response = await fetch(base + qurey, { mode: 'no-cors'});
+    const response = await fetch(base + qurey);
     const data = await response.json();
     
     return data[0]; 
